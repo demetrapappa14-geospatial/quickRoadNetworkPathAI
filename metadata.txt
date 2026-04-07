@@ -1,0 +1,16 @@
+[general]
+name=Quick Road Network Path AI
+qgisMinimumVersion=3.16
+qgisMaxinumVersion=3.99
+description=Find shortest path on a digitized road network using A* algorithm, with optional boundary clipping, distance, time, and cost export to GeoPackage.
+version=1.0
+author= Dimitra Pappa-Consortis Geospatial
+email=pappa@consortis.gr
+homepage=https://github.com/Consortis-Geospatial
+tracker=https://github.com/Consortis-Geospatial/QuickRoadNetworkPathAI/issues
+repository=https://github.com/Consortis-Geospatial/QuickRoadNetworkPathAI
+category=Analysis
+icon=icon.png
+experimental=False
+deprecated=False
+tags=RoadNetwork,NetworkAnalysis,Topology,Lines,ShortestPath,AI,A*,Algorithm,Geospatial
