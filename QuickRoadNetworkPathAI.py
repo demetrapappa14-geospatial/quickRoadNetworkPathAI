@@ -15,6 +15,7 @@ import math
 import os
 import tempfile
 
+
 class QuickRoadNetworkPathAI:
     def __init__(self, iface):
         self.iface = iface
