@@ -1,4 +1,10 @@
+import os
+import tempfile
+import heapq
+import math
+
 from qgis.PyQt.QtCore import Qt, QVariant
+from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import (
     QAction, QMessageBox, QDockWidget, QWidget, QVBoxLayout,
     QLabel, QComboBox, QPushButton, QFileDialog
@@ -6,14 +12,9 @@ from qgis.PyQt.QtWidgets import (
 from qgis.core import (
     QgsProject, QgsVectorLayer, QgsFeature, QgsGeometry,
     QgsPointXY, QgsDistanceArea, QgsVectorLayerExporter,
-    QgsFields, QgsField, QgsCoordinateTransform,
-    QgsSpatialIndex
+    QgsFields, QgsField, QgsCoordinateTransform
 )
 from qgis.gui import QgsMapToolEmitPoint, QgsVertexMarker
-import heapq
-import math
-import os
-import tempfile
 
 
 class QuickRoadNetworkPathAI:
@@ -34,12 +35,21 @@ class QuickRoadNetworkPathAI:
 
     # ---------------- GUI ----------------
     def initGui(self):
-        self.action = QAction("Quick Road Network Path AI", self.iface.mainWindow())
+        icon_path = os.path.join(os.path.dirname(__file__), "icon.png")
+        self.action = QAction(QIcon(icon_path), "Quick Road Network Path AI", self.iface.mainWindow())
+        self.action.setToolTip("Compute shortest path on a road network using A*")
         self.action.triggered.connect(self.create_dock)
+
+        # Add to plugin menu
         self.iface.addPluginToMenu("Quick Road Network Path AI", self.action)
 
+        # Add to toolbar
+        self.iface.addToolBarIcon(self.action)
+
     def unload(self):
-        self.iface.removePluginMenu("Quick Road Network Path AI", self.action)
+        if self.action:
+            self.iface.removePluginMenu("Quick Road Network Path AI", self.action)
+            self.iface.removeToolBarIcon(self.action)
         if self.dock:
             try:
                 self.iface.removeDockWidget(self.dock)
@@ -120,7 +130,6 @@ class QuickRoadNetworkPathAI:
         transform_to_layer = QgsCoordinateTransform(canvas_crs, layer_crs, QgsProject.instance().transformContext())
         pt_layer_crs = transform_to_layer.transform(map_point)
 
-        # Optional boundary filtering
         features = self.road_layer.getFeatures()
         if self.boundary_layer:
             boundary_geom = [f.geometry() for f in self.boundary_layer.getFeatures()]
@@ -326,7 +335,6 @@ class QuickRoadNetworkPathAI:
     def zoom_to_route(self, layer):
         if layer is None:
             return
-        # Zoom to the actual route geometry
         extent = layer.extent()
         self.canvas.setExtent(extent)
         self.canvas.refresh()
