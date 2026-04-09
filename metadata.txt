@@ -1,16 +1,17 @@
 [general]
 name=Quick Road Network Path AI
 qgisMinimumVersion=3.16
-qgisMaxinumVersion=3.99
-description=Find shortest path on a digitized road network using A* algorithm, with optional boundary clipping, distance, time, and cost export to GeoPackage.
-version=1.0
-author= Dimitra Pappa-Consortis Geospatial
-email=pappa@consortis.gr
-homepage=https://github.com/Consortis-Geospatial
-tracker=https://github.com/Consortis-Geospatial/QuickRoadNetworkPathAI/issues
-repository=https://github.com/Consortis-Geospatial/QuickRoadNetworkPathAI
+qgisMaximumVersion=3.99
+description=Compute the fastest path between two points on a road network using the A* algorithm with optional boundary filtering and export options.
+about=Quick Road Network Path AI is a QGIS plugin that converts a road network into a graph and calculates the optimal route between two user-defined points using the A* algorithm. The plugin supports snapping, travel time estimation based on speed attributes, and export to GeoPackage or Shapefile.
+version=1.0.0
+author=Dimitra Pappa
+email=demetrapappa14@gmail.com
+homepage=https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI
+tracker=https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAIissues
+repository=https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI
 category=Analysis
 icon=icon.png
 experimental=False
 deprecated=False
-tags=RoadNetwork,NetworkAnalysis,Topology,Lines,ShortestPath,AI,A*,Algorithm,Geospatial
+tags=road network,shortest path,network analysis,A*,routing,geospatial,qgis plugin
