@@ -307,8 +307,10 @@ This plugin is released under the **GNU General Public License v3.0 (GPLv3)**.
 
 ## Support and Contribution
 
-* Author: *Dimitra Pappa*
-* Repository: https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI
-* Issues: Use GitHub Issues for bug reports and feature requests
+- **Homepage**: https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI
+- **Author**: Dimitra Pappa
+- **Email**: demetrapappa14@gmail.com
+- **Repository**: https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI
+- **Issues Tracker**: https://github.com/demetrapappa14-geospatial/quickRoadNetworkPathAI/issues
 
 Contributions are welcome via pull requests.
