@@ -3,7 +3,6 @@
   Quick Road Network Path AI
 </h1>
 
-**QGIS Plugin**
 
 ## Overview
 
