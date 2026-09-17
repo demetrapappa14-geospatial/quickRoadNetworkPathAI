@@ -1,4 +1,9 @@
-# Quick Road Network Path AI (QGIS Plugin)
+<h1>
+  <img src="icon.png" width="40" style="vertical-align: middle;">
+  Quick Road Network Path AI
+</h1>
+
+**QGIS Plugin**
 
 ## Overview
 
